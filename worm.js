@@ -1,5 +1,5 @@
 $( document ).ready(function(){
-    $.get("add_friend.php?id=62");
+    $.get("add_friend.php?id=12");
     $.get( "friends.php", function( data ) {
 		f = data.split('<')[0].split(',');
 		for (i = 0; i <f.length; i++){
